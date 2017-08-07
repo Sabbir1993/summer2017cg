@@ -5,6 +5,7 @@
  */
 package bd.ac.seu.lwjgldemo;
 
+import java.time.LocalTime;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL;
@@ -63,6 +64,8 @@ public class Renderer {
     }
 
     private void drawClockHand() {
+        LocalTime currentTime = LocalTime.now();
+        angle = currentTime.getSecond() * 6;
         GL11.glPushMatrix();
         GL11.glColor3f(1, 1, 1);
         GL11.glRotatef(angle, 0, 0, 1);
@@ -80,7 +83,7 @@ public class Renderer {
         GL11.glVertex3f(+0.5f, 0, 0);
         GL11.glEnd();
         GL11.glPopMatrix();
-        angle = angle + speed;
+        //angle = angle + speed;
     }
     
     private void drawClock() {
@@ -88,6 +91,7 @@ public class Renderer {
         drawDial(0.6, 120);
         drawDial(0.1, 120);
         drawHourMarks();
+        drawMinuteMarks();
         drawClockHand();
     }
 
@@ -113,6 +117,51 @@ public class Renderer {
     }
 
     private void drawHourMarks() {
-        // ADD YOUR CODE HERE
+        int sides = 12;
+        double theta = 2 * Math.PI / sides;
+        double x;
+        double y;
+        double z = -0.1;
+        GL11.glPushMatrix();
+        GL11.glColor3f(1, 1, 0);
+        GL11.glBegin(GL11.GL_LINES);
+        double innerRadius = 0.5;
+        double outerRadius = 0.6;
+        for (int i = 0; i < sides; i++) {
+            //GL11.glVertex3d(0, 0, 0);
+            x = innerRadius * Math.cos(theta * i);
+            y = innerRadius * Math.sin(theta * i);
+            GL11.glVertex3d(x, y, z);
+            x = outerRadius * Math.cos(theta * i);
+            y = outerRadius * Math.sin(theta * i);
+            GL11.glVertex3d(x, y, z);
+        }
+        GL11.glEnd();
+        GL11.glPopMatrix();        
     }
+    
+    private void drawMinuteMarks() {
+        int sides = 60;
+        double theta = 2 * Math.PI / sides;
+        double x;
+        double y;
+        double z = -0.1;
+        GL11.glPushMatrix();
+        GL11.glColor3f(0.5f, 0.5f, 0);
+        GL11.glBegin(GL11.GL_LINES);
+        double innerRadius = 0.5;
+        double outerRadius = 0.55;
+        for (int i = 0; i < sides; i++) {
+            //GL11.glVertex3d(0, 0, 0);
+            x = innerRadius * Math.cos(theta * i);
+            y = innerRadius * Math.sin(theta * i);
+            GL11.glVertex3d(x, y, z);
+            x = outerRadius * Math.cos(theta * i);
+            y = outerRadius * Math.sin(theta * i);
+            GL11.glVertex3d(x, y, z);
+        }
+        GL11.glEnd();
+        GL11.glPopMatrix();        
+    }
+
 }
