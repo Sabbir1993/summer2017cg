@@ -19,10 +19,14 @@ public class Renderer {
 
     private long window;
     private float secondsAngle;
+    private float minutesAngle;
+    private float hoursAngle;
     private float speed;
 
     public Renderer() {
         secondsAngle = 0;
+        minutesAngle = 0;
+        hoursAngle = 0;
         speed = 1;
     }
 
@@ -63,10 +67,24 @@ public class Renderer {
         }
     }
 
-    private void drawSecondsHand() {
+    private float getSeconds() {
         LocalTime currentTime = LocalTime.now();
         float secondsFraction = currentTime.getNano() / 1000000000.0f;
-        secondsAngle = 90 - (currentTime.getSecond() + secondsFraction) * 6;
+        return currentTime.getSecond() + secondsFraction;
+    }
+
+    private float getMinutes() {
+        LocalTime currentTime = LocalTime.now();
+        return currentTime.getMinute() + getSeconds() / 60.0f;
+    }
+
+    private float getHours() {
+        LocalTime currentTime = LocalTime.now();
+        return currentTime.getHour() + getMinutes() / 60.f;
+    }
+
+    private void drawSecondsHand() {
+        secondsAngle = 90 - getSeconds() * 6;
         GL11.glPushMatrix();
         GL11.glColor3f(1, 1, 1);
         GL11.glRotatef(secondsAngle, 0, 0, 1);
@@ -84,9 +102,50 @@ public class Renderer {
         GL11.glVertex3f(+0.5f, 0, 0);
         GL11.glEnd();
         GL11.glPopMatrix();
-        //angle = angle + speed;
     }
-    
+
+    private void drawMinutesHand() {
+        minutesAngle = 90 - getMinutes() * 6;
+        GL11.glPushMatrix();
+        GL11.glColor3f(1, 1, 1);
+        GL11.glRotatef(minutesAngle, 0, 0, 1);
+        GL11.glBegin(GL11.GL_LINES);
+        GL11.glVertex3f(-0.0f, 0, 0);
+        GL11.glVertex3f(+0.3f, 0, 0);
+
+        GL11.glVertex3f(0.3f, -0.05f, 0);
+        GL11.glVertex3f(0.3f, +0.05f, 0);
+
+        GL11.glVertex3f(0.3f, -0.05f, 0);
+        GL11.glVertex3f(+0.4f, 0, 0);
+
+        GL11.glVertex3f(0.3f, +0.05f, 0);
+        GL11.glVertex3f(+0.4f, 0, 0);
+        GL11.glEnd();
+        GL11.glPopMatrix();
+    }
+
+    private void drawHoursHand() {
+        hoursAngle = 90 - getHours() * (360 / 12.0f);
+        GL11.glPushMatrix();
+        GL11.glColor3f(1, 1, 1);
+        GL11.glRotatef(hoursAngle, 0, 0, 1);
+        GL11.glBegin(GL11.GL_LINES);
+        GL11.glVertex3f(-0.0f, 0, 0);
+        GL11.glVertex3f(+0.2f, 0, 0);
+
+        GL11.glVertex3f(0.2f, -0.05f, 0);
+        GL11.glVertex3f(0.2f, +0.05f, 0);
+
+        GL11.glVertex3f(0.2f, -0.05f, 0);
+        GL11.glVertex3f(+0.3f, 0, 0);
+
+        GL11.glVertex3f(0.2f, +0.05f, 0);
+        GL11.glVertex3f(+0.3f, 0, 0);
+        GL11.glEnd();
+        GL11.glPopMatrix();
+    }
+
     private void drawClock() {
         drawDial(0.5, 120);
         drawDial(0.6, 120);
@@ -94,7 +153,9 @@ public class Renderer {
         drawMinuteMarks();
         drawHourMarks();
         drawSecondsHand();
-        
+        drawMinutesHand();
+        drawHoursHand();
+
         // Lab tasks:
         // Draw the minute and hour hands and sync them with the 
         // clock of your computer
@@ -142,9 +203,9 @@ public class Renderer {
             GL11.glVertex3d(x, y, z);
         }
         GL11.glEnd();
-        GL11.glPopMatrix();        
+        GL11.glPopMatrix();
     }
-    
+
     private void drawMinuteMarks() {
         int sides = 60;
         double theta = 2 * Math.PI / sides;
@@ -166,7 +227,7 @@ public class Renderer {
             GL11.glVertex3d(x, y, z);
         }
         GL11.glEnd();
-        GL11.glPopMatrix();        
+        GL11.glPopMatrix();
     }
 
 }
