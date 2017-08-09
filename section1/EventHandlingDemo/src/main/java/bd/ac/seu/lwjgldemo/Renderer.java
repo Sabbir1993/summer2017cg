@@ -18,11 +18,11 @@ import org.lwjgl.opengl.GL11;
 public class Renderer {
 
     private long window;
-    private float angle;
+    private float secondsAngle;
     private float speed;
 
     public Renderer() {
-        angle = 0;
+        secondsAngle = 0;
         speed = 1;
     }
 
@@ -63,23 +63,24 @@ public class Renderer {
         }
     }
 
-    private void drawClockHand() {
+    private void drawSecondsHand() {
         LocalTime currentTime = LocalTime.now();
-        angle = currentTime.getSecond() * 6;
+        float secondsFraction = currentTime.getNano() / 1000000000.0f;
+        secondsAngle = 90 - (currentTime.getSecond() + secondsFraction) * 6;
         GL11.glPushMatrix();
         GL11.glColor3f(1, 1, 1);
-        GL11.glRotatef(angle, 0, 0, 1);
+        GL11.glRotatef(secondsAngle, 0, 0, 1);
         GL11.glBegin(GL11.GL_LINES);
         GL11.glVertex3f(-0.0f, 0, 0);
         GL11.glVertex3f(+0.4f, 0, 0);
 
-        GL11.glVertex3f(0.4f, -0.1f, 0);
-        GL11.glVertex3f(0.4f, +0.1f, 0);
+        GL11.glVertex3f(0.4f, -0.05f, 0);
+        GL11.glVertex3f(0.4f, +0.05f, 0);
 
-        GL11.glVertex3f(0.4f, -0.1f, 0);
+        GL11.glVertex3f(0.4f, -0.05f, 0);
         GL11.glVertex3f(+0.5f, 0, 0);
 
-        GL11.glVertex3f(0.4f, +0.1f, 0);
+        GL11.glVertex3f(0.4f, +0.05f, 0);
         GL11.glVertex3f(+0.5f, 0, 0);
         GL11.glEnd();
         GL11.glPopMatrix();
@@ -90,9 +91,13 @@ public class Renderer {
         drawDial(0.5, 120);
         drawDial(0.6, 120);
         drawDial(0.1, 120);
-        drawHourMarks();
         drawMinuteMarks();
-        drawClockHand();
+        drawHourMarks();
+        drawSecondsHand();
+        
+        // Lab tasks:
+        // Draw the minute and hour hands and sync them with the 
+        // clock of your computer
     }
 
     private void drawDial(double radius, int sides) {
@@ -121,7 +126,7 @@ public class Renderer {
         double theta = 2 * Math.PI / sides;
         double x;
         double y;
-        double z = -0.1;
+        double z = +0.1;
         GL11.glPushMatrix();
         GL11.glColor3f(1, 1, 0);
         GL11.glBegin(GL11.GL_LINES);
