@@ -1,0 +1,889 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007ff84cdd98dc, pid=10454, tid=0x00007ff8ba117700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_131-b11) (build 1.8.0_131-b11)
+# Java VM: OpenJDK 64-Bit Server VM (25.131-b11 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [liblwjgl_opengl.so+0x468dc]  Java_org_lwjgl_opengl_GL30_nglGenVertexArrays__IJ+0xc
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://www.azulsystems.com/support/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007ff8b400b800):  JavaThread "main" [_thread_in_native, id=10458, stack(0x00007ff8ba017000,0x00007ff8ba118000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000f18
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007ff8a1d8a398, RCX=0x00007ff8b426674c, RDX=0x0000000000000001
+RSP=0x00007ff8ba1166e8, RBP=0x00007ff8ba116748, RSI=0x00007ff8b426674c, RDI=0x0000000000000001
+R8 =0x0000000000000003, R9 =0x00007ff8b415e1f0, R10=0x00007ff8a415a108, R11=0x00007ff8b8ecc610
+R12=0x0000000000000000, R13=0x00007ff8a1d8a398, R14=0x00007ff8ba116778, R15=0x00007ff8b400b800
+RIP=0x00007ff84cdd98dc, EFLAGS=0x0000000000010287, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007ff8ba1166e8)
+0x00007ff8ba1166e8:   00007ff8a415a134 00007ff8ba116748
+0x00007ff8ba1166f8:   00007ff8a4159ec7 00007ff8a4159e82
+0x00007ff8ba116708:   00007ff8ba116708 00007ff8a1d8a398
+0x00007ff8ba116718:   00007ff8ba116778 00007ff8a1d9d028
+0x00007ff8ba116728:   0000000000000000 00007ff8a1d8a398
+0x00007ff8ba116738:   0000000000000000 00007ff8ba116768
+0x00007ff8ba116748:   00007ff8ba1167c0 00007ff8a414affd
+0x00007ff8ba116758:   000000076d1db7f8 00007ff8a4154278
+0x00007ff8ba116768:   00007ff8b426674c 000000076d227098
+0x00007ff8ba116778:   0000000000000001 00007ff8ba116780
+0x00007ff8ba116788:   00007ff8a1d8a4ec 00007ff8ba1167f0
+0x00007ff8ba116798:   00007ff8a1d9d028 0000000000000000
+0x00007ff8ba1167a8:   00007ff8a1d8a550 00007ff8ba116768
+0x00007ff8ba1167b8:   00007ff8ba1167f8 00007ff8ba116840
+0x00007ff8ba1167c8:   00007ff8a414aa40 0000000000000000
+0x00007ff8ba1167d8:   0000000000000000 000000076d227098
+0x00007ff8ba1167e8:   0000000000010000 000000076d0cae68
+0x00007ff8ba1167f8:   000000076cb82588 00007ff8ba116800
+0x00007ff8ba116808:   00007ff8a1ca51cc 00007ff8ba116860
+0x00007ff8ba116818:   00007ff8a1ca5688 00007ff8a1d7ed18
+0x00007ff8ba116828:   00007ff8a1ca5258 00007ff8ba1167f8
+0x00007ff8ba116838:   00007ff8ba116860 00007ff8ba1168b0
+0x00007ff8ba116848:   00007ff8a414affd 000000076d1b4848
+0x00007ff8ba116858:   deaddeaf00000003 000000076cb82588
+0x00007ff8ba116868:   000000076cb82588 00007ff8ba116870
+0x00007ff8ba116878:   00007ff8a1ca50a9 00007ff8ba1168c0
+0x00007ff8ba116888:   00007ff8a1ca5688 0000000000000000
+0x00007ff8ba116898:   00007ff8a1ca50d0 00007ff8ba116868
+0x00007ff8ba1168a8:   00007ff8ba1168c0 00007ff8ba116908
+0x00007ff8ba1168b8:   00007ff8a414affd 000000076cb82588
+0x00007ff8ba1168c8:   00007ff8ba1168c8 00007ff8a1ca4f59
+0x00007ff8ba1168d8:   00007ff8ba116918 00007ff8a1ca5688 
+
+Instructions: (pc=0x00007ff84cdd98dc)
+0x00007ff84cdd98bc:   c0 1b 00 00 ff e0 66 66 66 66 66 2e 0f 1f 84 00
+0x00007ff84cdd98cc:   00 00 00 00 48 8b 07 48 89 ce 89 d7 48 8b 40 18
+0x00007ff84cdd98dc:   48 8b 80 18 0f 00 00 ff e0 66 66 2e 0f 1f 84 00
+0x00007ff84cdd98ec:   00 00 00 00 48 8b 07 48 89 ce 89 d7 48 8b 40 18 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX={method} {0x00007ff8a1d8a398} 'nglGenVertexArrays' '(IJ)V' in 'org/lwjgl/opengl/GL30'
+RCX=0x00007ff8b426674c is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x00007ff8ba1166e8 is pointing into the stack for thread: 0x00007ff8b400b800
+RBP=0x00007ff8ba116748 is pointing into the stack for thread: 0x00007ff8b400b800
+RSI=0x00007ff8b426674c is an unknown value
+RDI=0x0000000000000001 is an unknown value
+R8 =0x0000000000000003 is an unknown value
+R9 =0x00007ff8b415e1f0 is an unknown value
+R10=0x00007ff8a415a108 is at code_begin+808 in an Interpreter codelet
+method entry point (kind = native)  [0x00007ff8a4159de0, 0x00007ff8a415a6e0]  2304 bytes
+R11=0x00007ff8b8ecc610: <offset 0x939610> in /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/server/libjvm.so at 0x00007ff8b8593000
+R12=0x0000000000000000 is an unknown value
+R13={method} {0x00007ff8a1d8a398} 'nglGenVertexArrays' '(IJ)V' in 'org/lwjgl/opengl/GL30'
+R14=0x00007ff8ba116778 is pointing into the stack for thread: 0x00007ff8b400b800
+R15=0x00007ff8b400b800 is a thread
+
+
+Stack: [0x00007ff8ba017000,0x00007ff8ba118000],  sp=0x00007ff8ba1166e8,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [liblwjgl_opengl.so+0x468dc]  Java_org_lwjgl_opengl_GL30_nglGenVertexArrays__IJ+0xc
+j  org.lwjgl.opengl.GL30.glGenVertexArrays()I+20
+j  bd.ac.seu.lwjgldemo.Renderer.setupModel()V+92
+j  bd.ac.seu.lwjgldemo.Renderer.init()V+81
+j  bd.ac.seu.lwjgldemo.Renderer.run()V+1
+j  bd.ac.seu.lwjgldemo.Main.main([Ljava/lang/String;)V+9
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x659a3b]  JavaCalls::call_helper(JavaValue*, methodHandle*, JavaCallArguments*, Thread*)+0x108b
+V  [libjvm.so+0x67a5c8]  jni_invoke_static(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x338
+V  [libjvm.so+0x67c07f]  jni_CallStaticVoidMethod+0x17f
+C  [libjli.so+0x7794]  JavaMain+0x604
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.lwjgl.opengl.GL30.nglGenVertexArrays(IJ)V+0
+j  org.lwjgl.opengl.GL30.glGenVertexArrays()I+20
+j  bd.ac.seu.lwjgldemo.Renderer.setupModel()V+92
+j  bd.ac.seu.lwjgldemo.Renderer.init()V+81
+j  bd.ac.seu.lwjgldemo.Renderer.run()V+1
+j  bd.ac.seu.lwjgldemo.Main.main([Ljava/lang/String;)V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007ff8b40d3800 JavaThread "Service Thread" daemon [_thread_blocked, id=10475, stack(0x00007ff882dc5000,0x00007ff882ec6000)]
+  0x00007ff8b40c8800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=10474, stack(0x00007ff882ec6000,0x00007ff882fc7000)]
+  0x00007ff8b40c6000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=10473, stack(0x00007ff882fc7000,0x00007ff8830c8000)]
+  0x00007ff8b40c4800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=10472, stack(0x00007ff8830c8000,0x00007ff8831c9000)]
+  0x00007ff8b40c1800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10471, stack(0x00007ff8831c9000,0x00007ff8832ca000)]
+  0x00007ff8b40bd800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10470, stack(0x00007ff8832ca000,0x00007ff8833cb000)]
+  0x00007ff8b408d800 JavaThread "Finalizer" daemon [_thread_blocked, id=10469, stack(0x00007ff8836f7000,0x00007ff8837f8000)]
+  0x00007ff8b4089000 JavaThread "Reference Handler" daemon [_thread_blocked, id=10468, stack(0x00007ff8837f8000,0x00007ff8838f9000)]
+=>0x00007ff8b400b800 JavaThread "main" [_thread_in_native, id=10458, stack(0x00007ff8ba017000,0x00007ff8ba118000)]
+
+Other Threads:
+  0x00007ff8b4081000 VMThread [stack: 0x00007ff8838f9000,0x00007ff8839fa000] [id=10467]
+  0x00007ff8b40d6000 WatcherThread [stack: 0x00007ff882cc4000,0x00007ff882dc5000] [id=10476]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 74752K, used 31217K [0x000000076cb00000, 0x0000000771e00000, 0x00000007c0000000)
+  eden space 64512K, 48% used [0x000000076cb00000,0x000000076e97c7f8,0x0000000770a00000)
+  from space 10240K, 0% used [0x0000000771400000,0x0000000771400000,0x0000000771e00000)
+  to   space 10240K, 0% used [0x0000000770a00000,0x0000000770a00000,0x0000000771400000)
+ ParOldGen       total 171008K, used 0K [0x00000006c6000000, 0x00000006d0700000, 0x000000076cb00000)
+  object space 171008K, 0% used [0x00000006c6000000,0x00000006c6000000,0x00000006d0700000)
+ Metaspace       used 5643K, capacity 5870K, committed 6144K, reserved 1056768K
+  class space    used 598K, capacity 707K, committed 768K, reserved 1048576K
+
+Card table byte_map: [0x00007ff8a35b2000,0x00007ff8a3d83000] byte_map_base: 0x00007ff89ff82000
+
+Marking Bits: (ParMarkBitMap*) 0x00007ff8b94b3ce0
+ Begin Bits: [0x00007ff874300000, 0x00007ff878180000)
+ End Bits:   [0x00007ff878180000, 0x00007ff87c000000)
+
+Polling page: 0x00007ff8ba016000
+
+CodeCache: size=245760Kb used=2254Kb max_used=2254Kb free=243505Kb
+ bounds [0x00007ff8a4143000, 0x00007ff8a43b3000, 0x00007ff8b3143000]
+ total_blobs=1158 nmethods=465 adapters=609
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.614 Thread 0x00007ff8b40c8800  461       3       java.nio.HeapByteBuffer::put (167 bytes)
+Event: 0.615 Thread 0x00007ff8b40c8800 nmethod 461 0x00007ff8a436fbd0 code [0x00007ff8a436fe40, 0x00007ff8a4371238]
+Event: 0.615 Thread 0x00007ff8b40c8800  462       3       sun.security.provider.DigestBase::implCompressMultiBlock (23 bytes)
+Event: 0.615 Thread 0x00007ff8b40c8800 nmethod 462 0x00007ff8a436f690 code [0x00007ff8a436f800, 0x00007ff8a436fae8]
+Event: 0.616 Thread 0x00007ff8b40c8800  463       3       java.nio.Buffer::flip (20 bytes)
+Event: 0.616 Thread 0x00007ff8b40c8800 nmethod 463 0x00007ff8a4376cd0 code [0x00007ff8a4376e20, 0x00007ff8a4376f90]
+Event: 0.617 Thread 0x00007ff8b40c8800  464       3       sun.misc.URLClassPath$JarLoader::findResource (18 bytes)
+Event: 0.617 Thread 0x00007ff8b40c8800 nmethod 464 0x00007ff8a4377010 code [0x00007ff8a43771a0, 0x00007ff8a4377438]
+Event: 0.618 Thread 0x00007ff8b40c8800  465       3       java.nio.DirectByteBuffer::ix (10 bytes)
+Event: 0.618 Thread 0x00007ff8b40c8800 nmethod 465 0x00007ff8a436f390 code [0x00007ff8a436f4e0, 0x00007ff8a436f630]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (2 events):
+Event: 0.217 Thread 0x00007ff8b400b800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007ff8a42e7e38 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 0.586 Thread 0x00007ff8b400b800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007ff8a4367594 method=bd.ac.seu.lwjgldemo.Renderer.setupModel()V @ 22
+
+Internal exceptions (10 events):
+Event: 0.096 Thread 0x00007ff8b400b800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$static$0(Ljava/lang/String;)Ljava/lang/Boolean;> (0x000000076cc21840) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/interpreter/
+Event: 0.115 Thread 0x00007ff8b400b800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076cddbfa0) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/methodHandles.cpp, line 1146]
+Event: 0.117 Thread 0x00007ff8b400b800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076cde9350) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/methodHandles.cpp, line 1146]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7c1f8) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7c408) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7e928) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7eb38) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7f748) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.145 Thread 0x00007ff8b400b800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076ce7f958) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0.617 Thread 0x00007ff8b400b800 Exception <a 'sun/nio/fs/UnixException'> (0x000000076d219778) thrown at [/export/home/tester/jenkins/workspace/zulu8-silver-build-rhel64/zulu-src/hotspot/src/share/vm/prims/jni.cpp, line 709]
+
+Events (10 events):
+Event: 0.617 loading class java/nio/file/NoSuchFileException
+Event: 0.617 loading class java/nio/file/FileSystemException
+Event: 0.617 loading class java/nio/file/FileSystemException done
+Event: 0.618 loading class java/nio/file/NoSuchFileException done
+Event: 0.618 loading class org/lwjgl/opengl/GL$2
+Event: 0.618 loading class org/lwjgl/opengl/GL$2 done
+Event: 0.618 loading class org/lwjgl/opengl/GL$SharedLibraryGL
+Event: 0.618 loading class org/lwjgl/opengl/GL$SharedLibraryGL done
+Event: 0.618 loading class org/lwjgl/system/SharedLibrary$Delegate
+Event: 0.618 loading class org/lwjgl/system/SharedLibrary$Delegate done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:15 3014943                            /home/kmhasan/.sdkman/candidates/java/8u131-zulu/bin/java
+00600000-00601000 rw-p 00000000 08:15 3014943                            /home/kmhasan/.sdkman/candidates/java/8u131-zulu/bin/java
+02110000-02131000 rw-p 00000000 00:00 0                                  [heap]
+40fb3000-40fb5000 r-xs 00000000 08:06 10099165                           /tmp/.glg7vm69 (deleted)
+41006000-410a6000 rw-p 00000000 00:00 0 
+6c6000000-6d0700000 rw-p 00000000 00:00 0 
+6d0700000-76cb00000 ---p 00000000 00:00 0 
+76cb00000-771e00000 rw-p 00000000 00:00 0 
+771e00000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c00c0000 rw-p 00000000 00:00 0 
+7c00c0000-800000000 ---p 00000000 00:00 0 
+7ff84691c000-7ff848000000 rw-p 00000000 00:00 0 
+7ff848000000-7ff848021000 rw-p 00000000 00:00 0 
+7ff848021000-7ff84c000000 ---p 00000000 00:00 0 
+7ff84cd93000-7ff84cdfc000 r-xp 00000000 08:06 12852533                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl_opengl.so
+7ff84cdfc000-7ff84cffb000 ---p 00069000 08:06 12852533                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl_opengl.so
+7ff84cffb000-7ff84cffc000 r--p 00068000 08:06 12852533                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl_opengl.so
+7ff84cffc000-7ff84cffd000 rw-p 00069000 08:06 12852533                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl_opengl.so
+7ff84d000000-7ff84d200000 rw-p 00000000 00:00 0 
+7ff84d303000-7ff84d33e000 r-xp 00000000 08:06 12850880                   /tmp/lwjglkmhasan/3.1.2-build-29/libjemalloc.so
+7ff84d33e000-7ff84d53d000 ---p 0003b000 08:06 12850880                   /tmp/lwjglkmhasan/3.1.2-build-29/libjemalloc.so
+7ff84d53d000-7ff84d540000 r--p 0003a000 08:06 12850880                   /tmp/lwjglkmhasan/3.1.2-build-29/libjemalloc.so
+7ff84d540000-7ff84d541000 rw-p 0003d000 08:06 12850880                   /tmp/lwjglkmhasan/3.1.2-build-29/libjemalloc.so
+7ff84d541000-7ff84d542000 rw-p 00000000 00:00 0 
+7ff84d548000-7ff84d5c8000 rw-s 3585cd000 00:06 1249                      /dev/nvidiactl
+7ff84d5ce000-7ff84d64e000 rw-s 3970cb000 00:06 1249                      /dev/nvidiactl
+7ff84d654000-7ff84d6d4000 rw-s 357449000 00:06 1249                      /dev/nvidiactl
+7ff84d6d7000-7ff84d7d7000 rw-s 1a4c94000 00:06 1249                      /dev/nvidiactl
+7ff84d7db000-7ff84ebbf000 r-xp 00000000 08:06 2633669                    /usr/lib/nvidia-375/libnvidia-glcore.so.375.66
+7ff84ebbf000-7ff84ebdf000 rwxp 013e4000 08:06 2633669                    /usr/lib/nvidia-375/libnvidia-glcore.so.375.66
+7ff84ebdf000-7ff84efaf000 r-xp 01404000 08:06 2633669                    /usr/lib/nvidia-375/libnvidia-glcore.so.375.66
+7ff84efaf000-7ff84f1af000 ---p 017d4000 08:06 2633669                    /usr/lib/nvidia-375/libnvidia-glcore.so.375.66
+7ff84f1af000-7ff84f596000 rw-p 017d4000 08:06 2633669                    /usr/lib/nvidia-375/libnvidia-glcore.so.375.66
+7ff84f596000-7ff84f5ae000 rw-p 00000000 00:00 0 
+7ff84f5b3000-7ff84f5b6000 r-xp 00000000 08:06 2633695                    /usr/lib/nvidia-375/tls/libnvidia-tls.so.375.66
+7ff84f5b6000-7ff84f7b6000 ---p 00003000 08:06 2633695                    /usr/lib/nvidia-375/tls/libnvidia-tls.so.375.66
+7ff84f7b6000-7ff84f7b7000 rw-p 00003000 08:06 2633695                    /usr/lib/nvidia-375/tls/libnvidia-tls.so.375.66
+7ff84f7bb000-7ff84f884000 r-xp 00000000 08:06 2633668                    /usr/lib/nvidia-375/libGLX_nvidia.so.375.66
+7ff84f884000-7ff84f8b8000 rwxp 000c9000 08:06 2633668                    /usr/lib/nvidia-375/libGLX_nvidia.so.375.66
+7ff84f8b8000-7ff84f8cc000 r-xp 000fd000 08:06 2633668                    /usr/lib/nvidia-375/libGLX_nvidia.so.375.66
+7ff84f8cc000-7ff84facb000 ---p 00111000 08:06 2633668                    /usr/lib/nvidia-375/libGLX_nvidia.so.375.66
+7ff84facb000-7ff84faf3000 rw-p 00110000 08:06 2633668                    /usr/lib/nvidia-375/libGLX_nvidia.so.375.66
+7ff84faf3000-7ff84fafa000 rw-p 00000000 00:00 0 
+7ff84fafb000-7ff84fb3d000 r-xp 00000000 08:06 2633664                    /usr/lib/nvidia-375/libGLdispatch.so.0
+7ff84fb3d000-7ff84fb6f000 r-xp 00042000 08:06 2633664                    /usr/lib/nvidia-375/libGLdispatch.so.0
+7ff84fb6f000-7ff84fb81000 r-xp 00074000 08:06 2633664                    /usr/lib/nvidia-375/libGLdispatch.so.0
+7ff84fb81000-7ff84fd81000 ---p 00086000 08:06 2633664                    /usr/lib/nvidia-375/libGLdispatch.so.0
+7ff84fd81000-7ff84fda9000 rw-p 00086000 08:06 2633664                    /usr/lib/nvidia-375/libGLdispatch.so.0
+7ff84fda9000-7ff84fdc9000 rw-p 00000000 00:00 0 
+7ff84fdcb000-7ff84fdda000 r-xp 00000000 08:06 2633667                    /usr/lib/nvidia-375/libGLX.so.0
+7ff84fdda000-7ff84ffda000 ---p 0000f000 08:06 2633667                    /usr/lib/nvidia-375/libGLX.so.0
+7ff84ffda000-7ff84ffdb000 rw-p 0000f000 08:06 2633667                    /usr/lib/nvidia-375/libGLX.so.0
+7ff84ffdb000-7ff84fffb000 rw-p 00000000 00:00 0 
+7ff850000000-7ff8501ec000 rw-p 00000000 00:00 0 
+7ff8501ec000-7ff854000000 ---p 00000000 00:00 0 
+7ff854000000-7ff854021000 rw-p 00000000 00:00 0 
+7ff854021000-7ff858000000 ---p 00000000 00:00 0 
+7ff858000000-7ff8580ac000 rw-p 00000000 00:00 0 
+7ff8580ac000-7ff85c000000 ---p 00000000 00:00 0 
+7ff85c000000-7ff85c061000 rw-p 00000000 00:00 0 
+7ff85c061000-7ff860000000 ---p 00000000 00:00 0 
+7ff860000000-7ff860021000 rw-p 00000000 00:00 0 
+7ff860021000-7ff864000000 ---p 00000000 00:00 0 
+7ff864000000-7ff864056000 rw-p 00000000 00:00 0 
+7ff864056000-7ff868000000 ---p 00000000 00:00 0 
+7ff868000000-7ff868021000 rw-p 00000000 00:00 0 
+7ff868021000-7ff86c000000 ---p 00000000 00:00 0 
+7ff86c000000-7ff86c021000 rw-p 00000000 00:00 0 
+7ff86c021000-7ff870000000 ---p 00000000 00:00 0 
+7ff870000000-7ff870021000 rw-p 00000000 00:00 0 
+7ff870021000-7ff874000000 ---p 00000000 00:00 0 
+7ff874001000-7ff874014000 rw-s 1c9bce000 00:06 1249                      /dev/nvidiactl
+7ff87401b000-7ff87405b000 rw-s 1a98b8000 00:06 1249                      /dev/nvidiactl
+7ff87405b000-7ff87409f000 r-xp 00000000 08:06 2633679                    /usr/lib/nvidia-375/libGL.so.1.0.0
+7ff87409f000-7ff8740d1000 r-xp 00044000 08:06 2633679                    /usr/lib/nvidia-375/libGL.so.1.0.0
+7ff8740d1000-7ff8740e4000 r-xp 00076000 08:06 2633679                    /usr/lib/nvidia-375/libGL.so.1.0.0
+7ff8740e4000-7ff8742e4000 ---p 00089000 08:06 2633679                    /usr/lib/nvidia-375/libGL.so.1.0.0
+7ff8742e4000-7ff8742fe000 rw-p 00089000 08:06 2633679                    /usr/lib/nvidia-375/libGL.so.1.0.0
+7ff8742fe000-7ff8742ff000 rw-p 00000000 00:00 0 
+7ff874300000-7ff87c000000 rw-p 00000000 00:00 0 
+7ff87c000000-7ff87c021000 rw-p 00000000 00:00 0 
+7ff87c021000-7ff880000000 ---p 00000000 00:00 0 
+7ff880003000-7ff880005000 rw-s 00000000 08:06 10099165                   /tmp/.glg7vm69 (deleted)
+7ff88000b000-7ff88002b000 rw-s c0440000 00:06 1250                       /dev/nvidia0
+7ff88002c000-7ff88004c000 rw-s 3591e1000 00:06 1249                      /dev/nvidiactl
+7ff880052000-7ff880092000 rw-s 357bff000 00:06 1249                      /dev/nvidiactl
+7ff880092000-7ff8800b2000 rw-s 339047000 00:06 1249                      /dev/nvidiactl
+7ff8800b6000-7ff8800f6000 rw-s 27faeb000 00:06 1249                      /dev/nvidiactl
+7ff8800fb000-7ff88011b000 rw-s 1a7448000 00:06 1249                      /dev/nvidiactl
+7ff880122000-7ff880226000 rw-s 446557000 00:06 1249                      /dev/nvidiactl
+7ff88022b000-7ff88022c000 r-xp 00000000 08:06 2629076                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7ff88022c000-7ff88042b000 ---p 00001000 08:06 2629076                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7ff88042b000-7ff88042c000 r--p 00000000 08:06 2629076                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7ff88042c000-7ff88042d000 rw-p 00001000 08:06 2629076                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7ff880433000-7ff880442000 r-xp 00000000 08:06 2629103                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7ff880442000-7ff880641000 ---p 0000f000 08:06 2629103                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7ff880641000-7ff880642000 r--p 0000e000 08:06 2629103                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7ff880642000-7ff880643000 rw-p 0000f000 08:06 2629103                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7ff880643000-7ff880648000 r-xp 00000000 08:06 2629131                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7ff880648000-7ff880847000 ---p 00005000 08:06 2629131                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7ff880847000-7ff880848000 r--p 00004000 08:06 2629131                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7ff880848000-7ff880849000 rw-p 00005000 08:06 2629131                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7ff88084b000-7ff880850000 r-xp 00000000 08:06 2629093                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7ff880850000-7ff880a4f000 ---p 00005000 08:06 2629093                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7ff880a4f000-7ff880a50000 r--p 00004000 08:06 2629093                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7ff880a50000-7ff880a51000 rw-p 00005000 08:06 2629093                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7ff880a53000-7ff880a55000 r-xp 00000000 08:06 2629082                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7ff880a55000-7ff880c55000 ---p 00002000 08:06 2629082                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7ff880c55000-7ff880c56000 r--p 00002000 08:06 2629082                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7ff880c56000-7ff880c57000 rw-p 00003000 08:06 2629082                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7ff880c5b000-7ff880c60000 r-xp 00000000 08:06 2629097                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7ff880c60000-7ff880e5f000 ---p 00005000 08:06 2629097                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7ff880e5f000-7ff880e60000 r--p 00004000 08:06 2629097                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7ff880e60000-7ff880e61000 rw-p 00005000 08:06 2629097                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7ff880e63000-7ff880e6c000 r-xp 00000000 08:06 2629115                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7ff880e6c000-7ff88106b000 ---p 00009000 08:06 2629115                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7ff88106b000-7ff88106c000 r--p 00008000 08:06 2629115                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7ff88106c000-7ff88106d000 rw-p 00009000 08:06 2629115                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7ff881073000-7ff881084000 r-xp 00000000 08:06 2629095                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7ff881084000-7ff881283000 ---p 00011000 08:06 2629095                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7ff881283000-7ff881284000 r--p 00010000 08:06 2629095                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7ff881284000-7ff881285000 rw-p 00011000 08:06 2629095                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7ff88128b000-7ff8812ac000 r-xp 00000000 08:06 2630480                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7ff8812ac000-7ff8814ab000 ---p 00021000 08:06 2630480                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7ff8814ab000-7ff8814ac000 r--p 00020000 08:06 2630480                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7ff8814ac000-7ff8814ad000 rw-p 00021000 08:06 2630480                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7ff8814b3000-7ff8814bc000 r-xp 00000000 08:06 2629089                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7ff8814bc000-7ff8816bb000 ---p 00009000 08:06 2629089                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7ff8816bb000-7ff8816bc000 r--p 00008000 08:06 2629089                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7ff8816bc000-7ff8816bd000 rw-p 00009000 08:06 2629089                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7ff8816c3000-7ff8816c5000 r-xp 00000000 08:06 2629105                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7ff8816c5000-7ff8818c4000 ---p 00002000 08:06 2629105                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7ff8818c4000-7ff8818c5000 r--p 00001000 08:06 2629105                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7ff8818c5000-7ff8818c6000 rw-p 00002000 08:06 2629105                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7ff8818cb000-7ff8818d5000 r-xp 00000000 08:06 2629113                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7ff8818d5000-7ff881ad4000 ---p 0000a000 08:06 2629113                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7ff881ad4000-7ff881ad5000 r--p 00009000 08:06 2629113                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7ff881ad5000-7ff881ad6000 rw-p 0000a000 08:06 2629113                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7ff881adb000-7ff881c10000 r-xp 00000000 08:06 2629078                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7ff881c10000-7ff881e10000 ---p 00135000 08:06 2629078                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7ff881e10000-7ff881e11000 r--p 00135000 08:06 2629078                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7ff881e11000-7ff881e15000 rw-p 00136000 08:06 2629078                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7ff881e17000-7ff881e18000 rw-s 1c9bcc000 00:06 1249                      /dev/nvidiactl
+7ff881e1f000-7ff881e23000 rw-s 1a96fc000 00:06 1249                      /dev/nvidiactl
+7ff881e26000-7ff881e27000 rw-s cfdeb000 00:06 1250                       /dev/nvidia0
+7ff881e2e000-7ff881e2f000 rw-s cfdeb000 00:06 1250                       /dev/nvidia0
+7ff881e36000-7ff881e37000 rw-s cfdeb000 00:06 1250                       /dev/nvidia0
+7ff881e39000-7ff881e3a000 rw-s 3579f6000 00:06 1249                      /dev/nvidiactl
+7ff881e3b000-7ff881e3c000 rw-s fd060000 00:06 1250                       /dev/nvidia0
+7ff881e43000-7ff881e4a000 r--s 00000000 08:06 2889855                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7ff881e4b000-7ff881e6b000 r-xp 00000000 08:06 12849502                   /tmp/lwjglkmhasan/3.1.2-build-29/libglfw.so
+7ff881e6b000-7ff88206a000 ---p 00020000 08:06 12849502                   /tmp/lwjglkmhasan/3.1.2-build-29/libglfw.so
+7ff88206a000-7ff88206b000 r--p 0001f000 08:06 12849502                   /tmp/lwjglkmhasan/3.1.2-build-29/libglfw.so
+7ff88206b000-7ff88206c000 rw-p 00020000 08:06 12849502                   /tmp/lwjglkmhasan/3.1.2-build-29/libglfw.so
+7ff88206c000-7ff88206d000 rw-p 00000000 00:00 0 
+7ff88206d000-7ff882072000 r--s 0009a000 08:15 3014772                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/jsse.jar
+7ff882075000-7ff882076000 r--s 0000a000 08:15 3408334                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-yoga/3.1.2/lwjgl-yoga-3.1.2-natives-linux.jar
+7ff88207c000-7ff88207d000 r--s 00001000 08:15 3408332                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-xxhash/3.1.2/lwjgl-xxhash-3.1.2-natives-linux.jar
+7ff882083000-7ff882084000 r--s 00008000 08:15 3408331                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyfd/3.1.2/lwjgl-tinyfd-3.1.2-natives-linux.jar
+7ff882088000-7ff882089000 r--s 0000d000 08:15 3408326                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyexr/3.1.2/lwjgl-tinyexr-3.1.2-natives-linux.jar
+7ff882090000-7ff882091000 r--s 0002d000 08:15 3408329                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-stb/3.1.2/lwjgl-stb-3.1.2-natives-linux.jar
+7ff882093000-7ff882094000 r--s 00000000 08:15 3408325                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-sse/3.1.2/lwjgl-sse-3.1.2-natives-linux.jar
+7ff882098000-7ff882099000 r--s 00005000 08:15 3408324                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-par/3.1.2/lwjgl-par-3.1.2-natives-linux.jar
+7ff88209e000-7ff8820a0000 r--s 0001b000 08:15 3408319                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openvr/3.1.2/lwjgl-openvr-3.1.2-natives-linux.jar
+7ff8820a2000-7ff8820a3000 r--s 00007000 08:15 3408318                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengles/3.1.2/lwjgl-opengles-3.1.2-natives-linux.jar
+7ff8820a8000-7ff8820a9000 r--s 00015000 08:15 3408317                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengl/3.1.2/lwjgl-opengl-3.1.2-natives-linux.jar
+7ff8820aa000-7ff8820ab000 r--s 00077000 08:15 3408314                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openal/3.1.2/lwjgl-openal-3.1.2-natives-linux.jar
+7ff8820ab000-7ff8820c1000 r-xp 00000000 08:06 8655337                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7ff8820c1000-7ff8822c0000 ---p 00016000 08:06 8655337                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7ff8822c0000-7ff8822c1000 rw-p 00015000 08:06 8655337                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7ff8822c4000-7ff8822c5000 r--s 00021000 08:15 3408313                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nuklear/3.1.2/lwjgl-nuklear-3.1.2-natives-linux.jar
+7ff8822cc000-7ff8822cd000 r--s 00001000 08:15 3408311                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nfd/3.1.2/lwjgl-nfd-3.1.2-natives-linux.jar
+7ff8822d3000-7ff8822d4000 r--s 00020000 08:15 3408307                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nanovg/3.1.2/lwjgl-nanovg-3.1.2-natives-linux.jar
+7ff8822d7000-7ff8822d8000 r--s 0000c000 08:15 3408306                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-lmdb/3.1.2/lwjgl-lmdb-3.1.2-natives-linux.jar
+7ff8822dd000-7ff8822de000 r--s 0001a000 08:15 3408303                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-jemalloc/3.1.2/lwjgl-jemalloc-3.1.2-natives-linux.jar
+7ff8822e1000-7ff8822e2000 r--s 0000e000 08:15 3408301                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-glfw/3.1.2/lwjgl-glfw-3.1.2-natives-linux.jar
+7ff8822e9000-7ff8822eb000 r--s 00046000 08:15 3408300                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-bgfx/3.1.2/lwjgl-bgfx-3.1.2-natives-linux.jar
+7ff8822f0000-7ff8822f1000 r--s 002ad000 08:15 3408299                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-assimp/3.1.2/lwjgl-assimp-3.1.2-natives-linux.jar
+7ff8822f3000-7ff882343000 r-xp 00000000 08:06 12846332                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl.so
+7ff882343000-7ff882542000 ---p 00050000 08:06 12846332                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl.so
+7ff882542000-7ff882543000 r--p 0004f000 08:06 12846332                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl.so
+7ff882543000-7ff882544000 rw-p 00050000 08:06 12846332                   /tmp/lwjglkmhasan/3.1.2-build-29/liblwjgl.so
+7ff882545000-7ff882546000 r--s 00012000 08:15 3408295                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl/3.1.2/lwjgl-3.1.2-natives-linux.jar
+7ff88254d000-7ff88254f000 r--s 0000a000 08:15 3408294                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-yoga/3.1.2/lwjgl-yoga-3.1.2.jar
+7ff88254f000-7ff882550000 r--s 00004000 08:15 3408293                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-xxhash/3.1.2/lwjgl-xxhash-3.1.2.jar
+7ff882556000-7ff882564000 r--s 000f3000 08:15 3408292                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-vulkan/3.1.2/lwjgl-vulkan-3.1.2.jar
+7ff882564000-7ff882565000 r--s 00001000 08:15 3408287                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyfd/3.1.2/lwjgl-tinyfd-3.1.2.jar
+7ff88256c000-7ff88256d000 r--s 00009000 08:15 3408286                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyexr/3.1.2/lwjgl-tinyexr-3.1.2.jar
+7ff88256e000-7ff882570000 r--s 00013000 08:15 3408285                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-stb/3.1.2/lwjgl-stb-3.1.2.jar
+7ff882573000-7ff882574000 r--s 00000000 08:15 3408281                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-sse/3.1.2/lwjgl-sse-3.1.2.jar
+7ff882574000-7ff882576000 r--s 00001000 08:15 3408280                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-par/3.1.2/lwjgl-par-3.1.2.jar
+7ff882579000-7ff88257d000 r--s 00046000 08:15 3408278                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openvr/3.1.2/lwjgl-openvr-3.1.2.jar
+7ff88257f000-7ff882585000 r--s 00044000 08:15 3408273                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengles/3.1.2/lwjgl-opengles-3.1.2.jar
+7ff882587000-7ff882591000 r--s 000ac000 08:15 3408272                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengl/3.1.2/lwjgl-opengl-3.1.2.jar
+7ff882592000-7ff882893000 rw-p 00000000 00:00 0 
+7ff882893000-7ff8828aa000 r-xp 00000000 08:15 3014796                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnet.so
+7ff8828aa000-7ff882aa9000 ---p 00017000 08:15 3014796                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnet.so
+7ff882aa9000-7ff882aaa000 rw-p 00016000 08:15 3014796                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnet.so
+7ff882aab000-7ff882abc000 r-xp 00000000 08:15 3014810                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnio.so
+7ff882abc000-7ff882cbc000 ---p 00011000 08:15 3014810                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnio.so
+7ff882cbc000-7ff882cbd000 rw-p 00011000 08:15 3014810                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libnio.so
+7ff882cc4000-7ff882cc5000 ---p 00000000 00:00 0 
+7ff882cc5000-7ff882dc5000 rw-p 00000000 00:00 0 
+7ff882dc5000-7ff882dc8000 ---p 00000000 00:00 0 
+7ff882dc8000-7ff882ec6000 rw-p 00000000 00:00 0 
+7ff882ec6000-7ff882ec9000 ---p 00000000 00:00 0 
+7ff882ec9000-7ff882fc7000 rw-p 00000000 00:00 0 
+7ff882fc7000-7ff882fca000 ---p 00000000 00:00 0 
+7ff882fca000-7ff8830c8000 rw-p 00000000 00:00 0 
+7ff8830c8000-7ff8830cb000 ---p 00000000 00:00 0 
+7ff8830cb000-7ff8831c9000 rw-p 00000000 00:00 0 
+7ff8831c9000-7ff8831cc000 ---p 00000000 00:00 0 
+7ff8831cc000-7ff8832ca000 rw-p 00000000 00:00 0 
+7ff8832ca000-7ff8832cd000 ---p 00000000 00:00 0 
+7ff8832cd000-7ff8833cb000 rw-p 00000000 00:00 0 
+7ff8833cb000-7ff8836f2000 r--p 00000000 08:06 2640012                    /usr/lib/locale/locale-archive
+7ff8836f7000-7ff8836fa000 ---p 00000000 00:00 0 
+7ff8836fa000-7ff8837f8000 rw-p 00000000 00:00 0 
+7ff8837f8000-7ff8837fb000 ---p 00000000 00:00 0 
+7ff8837fb000-7ff8838f9000 rw-p 00000000 00:00 0 
+7ff8838f9000-7ff8838fa000 ---p 00000000 00:00 0 
+7ff8838fa000-7ff884000000 rw-p 00000000 00:00 0 
+7ff884000000-7ff884021000 rw-p 00000000 00:00 0 
+7ff884021000-7ff888000000 ---p 00000000 00:00 0 
+7ff888000000-7ff888021000 rw-p 00000000 00:00 0 
+7ff888021000-7ff88c000000 ---p 00000000 00:00 0 
+7ff88c000000-7ff88c021000 rw-p 00000000 00:00 0 
+7ff88c021000-7ff890000000 ---p 00000000 00:00 0 
+7ff890000000-7ff890021000 rw-p 00000000 00:00 0 
+7ff890021000-7ff894000000 ---p 00000000 00:00 0 
+7ff894000000-7ff894021000 rw-p 00000000 00:00 0 
+7ff894021000-7ff898000000 ---p 00000000 00:00 0 
+7ff898000000-7ff898021000 rw-p 00000000 00:00 0 
+7ff898021000-7ff89c000000 ---p 00000000 00:00 0 
+7ff89c000000-7ff89c021000 rw-p 00000000 00:00 0 
+7ff89c021000-7ff8a0000000 ---p 00000000 00:00 0 
+7ff8a0006000-7ff8a0009000 r--s 00023000 08:15 3408271                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opencl/3.1.2/lwjgl-opencl-3.1.2.jar
+7ff8a000b000-7ff8a000e000 r--s 00010000 08:15 3408270                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openal/3.1.2/lwjgl-openal-3.1.2.jar
+7ff8a000f000-7ff8a0015000 r--s 00054000 08:15 3408267                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nuklear/3.1.2/lwjgl-nuklear-3.1.2.jar
+7ff8a001c000-7ff8a001d000 r--s 00001000 08:15 3408264                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nfd/3.1.2/lwjgl-nfd-3.1.2.jar
+7ff8a0023000-7ff8a0025000 r--s 00008000 08:15 3408262                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nanovg/3.1.2/lwjgl-nanovg-3.1.2.jar
+7ff8a0028000-7ff8a002a000 r--s 00005000 08:15 3408261                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-lmdb/3.1.2/lwjgl-lmdb-3.1.2.jar
+7ff8a002a000-7ff8a002c000 r--s 00007000 08:15 3408259                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-jemalloc/3.1.2/lwjgl-jemalloc-3.1.2.jar
+7ff8a0030000-7ff8a0031000 r--s 00005000 08:15 3408258                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-jawt/3.1.2/lwjgl-jawt-3.1.2.jar
+7ff8a0031000-7ff8a0044000 r--s 00346000 08:15 3014863                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/resources.jar
+7ff8a0045000-7ff8a16d1000 rw-p 00000000 00:00 0 
+7ff8a16d1000-7ff8a18a0000 r--s 03c36000 08:15 3014843                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/rt.jar
+7ff8a18a4000-7ff8a1de4000 rw-p 00000000 00:00 0 
+7ff8a1de4000-7ff8a20a4000 ---p 00000000 00:00 0 
+7ff8a20a4000-7ff8a2874000 rw-p 00000000 00:00 0 
+7ff8a2874000-7ff8a2875000 ---p 00000000 00:00 0 
+7ff8a2875000-7ff8a2975000 rw-p 00000000 00:00 0 
+7ff8a2975000-7ff8a2976000 ---p 00000000 00:00 0 
+7ff8a2976000-7ff8a2a76000 rw-p 00000000 00:00 0 
+7ff8a2a76000-7ff8a2a77000 ---p 00000000 00:00 0 
+7ff8a2a77000-7ff8a2b77000 rw-p 00000000 00:00 0 
+7ff8a2b77000-7ff8a2b78000 ---p 00000000 00:00 0 
+7ff8a2b78000-7ff8a2c78000 rw-p 00000000 00:00 0 
+7ff8a2c78000-7ff8a2c79000 ---p 00000000 00:00 0 
+7ff8a2c79000-7ff8a2d79000 rw-p 00000000 00:00 0 
+7ff8a2d79000-7ff8a2d7a000 ---p 00000000 00:00 0 
+7ff8a2d7a000-7ff8a2e7a000 rw-p 00000000 00:00 0 
+7ff8a2e7a000-7ff8a2e7b000 ---p 00000000 00:00 0 
+7ff8a2e7b000-7ff8a2f7b000 rw-p 00000000 00:00 0 
+7ff8a2f7b000-7ff8a2f7c000 ---p 00000000 00:00 0 
+7ff8a2f7c000-7ff8a30d0000 rw-p 00000000 00:00 0 
+7ff8a30d0000-7ff8a35b2000 ---p 00000000 00:00 0 
+7ff8a35b2000-7ff8a3606000 rw-p 00000000 00:00 0 
+7ff8a3606000-7ff8a3ae7000 ---p 00000000 00:00 0 
+7ff8a3ae7000-7ff8a3b11000 rw-p 00000000 00:00 0 
+7ff8a3b11000-7ff8a3d82000 ---p 00000000 00:00 0 
+7ff8a3d82000-7ff8a3d8d000 rw-p 00000000 00:00 0 
+7ff8a3d8d000-7ff8a4143000 ---p 00000000 00:00 0 
+7ff8a4143000-7ff8a43b3000 rwxp 00000000 00:00 0 
+7ff8a43b3000-7ff8b3143000 ---p 00000000 00:00 0 
+7ff8b3143000-7ff8b315d000 r-xp 00000000 08:15 3014828                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libzip.so
+7ff8b315d000-7ff8b335c000 ---p 0001a000 08:15 3014828                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libzip.so
+7ff8b335c000-7ff8b335d000 rw-p 00019000 08:15 3014828                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libzip.so
+7ff8b3363000-7ff8b336e000 r-xp 00000000 08:06 8650931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7ff8b336e000-7ff8b356d000 ---p 0000b000 08:06 8650931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7ff8b356d000-7ff8b356e000 r--p 0000a000 08:06 8650931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7ff8b356e000-7ff8b356f000 rw-p 0000b000 08:06 8650931                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7ff8b356f000-7ff8b3575000 rw-p 00000000 00:00 0 
+7ff8b357b000-7ff8b3586000 r-xp 00000000 08:06 8650934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7ff8b3586000-7ff8b3785000 ---p 0000b000 08:06 8650934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7ff8b3785000-7ff8b3786000 r--p 0000a000 08:06 8650934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7ff8b3786000-7ff8b3787000 rw-p 0000b000 08:06 8650934                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7ff8b378b000-7ff8b37a1000 r-xp 00000000 08:06 8650927                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7ff8b37a1000-7ff8b39a0000 ---p 00016000 08:06 8650927                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7ff8b39a0000-7ff8b39a1000 r--p 00015000 08:06 8650927                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7ff8b39a1000-7ff8b39a2000 rw-p 00016000 08:06 8650927                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7ff8b39a2000-7ff8b39a4000 rw-p 00000000 00:00 0 
+7ff8b39ab000-7ff8b39b3000 r-xp 00000000 08:06 8650940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7ff8b39b3000-7ff8b3bb2000 ---p 00008000 08:06 8650940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7ff8b3bb2000-7ff8b3bb3000 r--p 00007000 08:06 8650940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7ff8b3bb3000-7ff8b3bb4000 rw-p 00008000 08:06 8650940                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7ff8b3bbb000-7ff8b3be5000 r-xp 00000000 08:15 3014813                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libjava.so
+7ff8b3be5000-7ff8b3de5000 ---p 0002a000 08:15 3014813                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libjava.so
+7ff8b3de5000-7ff8b3de7000 rw-p 0002a000 08:15 3014813                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libjava.so
+7ff8b3deb000-7ff8b3df8000 r-xp 00000000 08:15 3014812                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libverify.so
+7ff8b3df8000-7ff8b3ff8000 ---p 0000d000 08:15 3014812                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libverify.so
+7ff8b3ff8000-7ff8b3ffa000 rw-p 0000d000 08:15 3014812                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/libverify.so
+7ff8b4000000-7ff8b492d000 rw-p 00000000 00:00 0 
+7ff8b492d000-7ff8b8000000 ---p 00000000 00:00 0 
+7ff8b8005000-7ff8b807b000 rw-p 00000000 00:00 0 
+7ff8b807b000-7ff8b8082000 r-xp 00000000 08:06 8650936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7ff8b8082000-7ff8b8281000 ---p 00007000 08:06 8650936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7ff8b8281000-7ff8b8282000 r--p 00006000 08:06 8650936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7ff8b8282000-7ff8b8283000 rw-p 00007000 08:06 8650936                    /lib/x86_64-linux-gnu/librt-2.23.so
+7ff8b8283000-7ff8b838b000 r-xp 00000000 08:06 8650945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7ff8b838b000-7ff8b858a000 ---p 00108000 08:06 8650945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7ff8b858a000-7ff8b858b000 r--p 00107000 08:06 8650945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7ff8b858b000-7ff8b858c000 rw-p 00108000 08:06 8650945                    /lib/x86_64-linux-gnu/libm-2.23.so
+7ff8b8593000-7ff8b91d1000 r-xp 00000000 08:15 3014799                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/server/libjvm.so
+7ff8b91d1000-7ff8b93d1000 ---p 00c3e000 08:15 3014799                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/server/libjvm.so
+7ff8b93d1000-7ff8b94a0000 rw-p 00c3e000 08:15 3014799                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/jre/lib/amd64/server/libjvm.so
+7ff8b94a0000-7ff8b94e2000 rw-p 00000000 00:00 0 
+7ff8b94e3000-7ff8b96a3000 r-xp 00000000 08:06 8650950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7ff8b96a3000-7ff8b98a3000 ---p 001c0000 08:06 8650950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7ff8b98a3000-7ff8b98a7000 r--p 001c0000 08:06 8650950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7ff8b98a7000-7ff8b98a9000 rw-p 001c4000 08:06 8650950                    /lib/x86_64-linux-gnu/libc-2.23.so
+7ff8b98a9000-7ff8b98ad000 rw-p 00000000 00:00 0 
+7ff8b98b3000-7ff8b98b6000 r-xp 00000000 08:06 8650939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7ff8b98b6000-7ff8b9ab5000 ---p 00003000 08:06 8650939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7ff8b9ab5000-7ff8b9ab6000 r--p 00002000 08:06 8650939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7ff8b9ab6000-7ff8b9ab7000 rw-p 00003000 08:06 8650939                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7ff8b9abb000-7ff8b9ad0000 r-xp 00000000 08:15 3014904                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/lib/amd64/jli/libjli.so
+7ff8b9ad0000-7ff8b9cd0000 ---p 00015000 08:15 3014904                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/lib/amd64/jli/libjli.so
+7ff8b9cd0000-7ff8b9cd1000 rw-p 00015000 08:15 3014904                    /home/kmhasan/.sdkman/candidates/java/8u131-zulu/lib/amd64/jli/libjli.so
+7ff8b9cd3000-7ff8b9ceb000 r-xp 00000000 08:06 8650933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7ff8b9ceb000-7ff8b9eea000 ---p 00018000 08:06 8650933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7ff8b9eea000-7ff8b9eeb000 r--p 00017000 08:06 8650933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7ff8b9eeb000-7ff8b9eec000 rw-p 00018000 08:06 8650933                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7ff8b9eec000-7ff8b9ef0000 rw-p 00000000 00:00 0 
+7ff8b9ef3000-7ff8b9f19000 r-xp 00000000 08:06 8650928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7ff8b9f20000-7ff8b9f23000 r--s 00015000 08:15 3408250                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-glfw/3.1.2/lwjgl-glfw-3.1.2.jar
+7ff8b9f26000-7ff8b9f2a000 r--s 0001b000 08:15 3408253                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-egl/3.1.2/lwjgl-egl-3.1.2.jar
+7ff8b9f2a000-7ff8b9f2d000 r--s 0001f000 08:15 3408251                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-bgfx/3.1.2/lwjgl-bgfx-3.1.2.jar
+7ff8b9f2d000-7ff8b9f30000 r--s 0002a000 08:15 3408249                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl-assimp/3.1.2/lwjgl-assimp-3.1.2.jar
+7ff8b9f31000-7ff8b9f36000 r--s 0003e000 08:15 3408252                    /home/kmhasan/.m2/repository/org/lwjgl/lwjgl/3.1.2/lwjgl-3.1.2.jar
+7ff8b9f39000-7ff8ba00b000 rw-p 00000000 00:00 0 
+7ff8ba00b000-7ff8ba013000 rw-s 00000000 08:06 12332887                   /tmp/hsperfdata_kmhasan/10454
+7ff8ba014000-7ff8ba015000 r-xp 00000000 00:00 0 
+7ff8ba015000-7ff8ba016000 rw-p 00000000 00:00 0 
+7ff8ba016000-7ff8ba017000 r--p 00000000 00:00 0 
+7ff8ba017000-7ff8ba01a000 ---p 00000000 00:00 0 
+7ff8ba01a000-7ff8ba118000 rw-p 00000000 00:00 0 
+7ff8ba118000-7ff8ba119000 r--p 00025000 08:06 8650928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7ff8ba119000-7ff8ba11a000 rw-p 00026000 08:06 8650928                    /lib/x86_64-linux-gnu/ld-2.23.so
+7ff8ba11a000-7ff8ba11c000 rw-p 00000000 00:00 0 
+7ff8ba11c000-7ff8ba121000 rw-p 00000000 00:00 0 
+7ffc852aa000-7ffc852cc000 rw-p 00000000 00:00 0                          [stack]
+7ffc85383000-7ffc85385000 r--p 00000000 00:00 0                          [vvar]
+7ffc85385000-7ffc85387000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+java_command: bd.ac.seu.lwjgldemo.Main
+java_class_path (initial): /home/kmhasan/NetBeansProjects/summer2017cg/section2/VAO VBO Demo/target/classes:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl/3.1.2/lwjgl-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-assimp/3.1.2/lwjgl-assimp-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-bgfx/3.1.2/lwjgl-bgfx-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-egl/3.1.2/lwjgl-egl-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-glfw/3.1.2/lwjgl-glfw-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-jawt/3.1.2/lwjgl-jawt-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-jemalloc/3.1.2/lwjgl-jemalloc-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-lmdb/3.1.2/lwjgl-lmdb-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nanovg/3.1.2/lwjgl-nanovg-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nfd/3.1.2/lwjgl-nfd-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-nuklear/3.1.2/lwjgl-nuklear-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openal/3.1.2/lwjgl-openal-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opencl/3.1.2/lwjgl-opencl-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengl/3.1.2/lwjgl-opengl-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-opengles/3.1.2/lwjgl-opengles-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-openvr/3.1.2/lwjgl-openvr-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-par/3.1.2/lwjgl-par-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-sse/3.1.2/lwjgl-sse-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-stb/3.1.2/lwjgl-stb-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyexr/3.1.2/lwjgl-tinyexr-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-tinyfd/3.1.2/lwjgl-tinyfd-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-vulkan/3.1.2/lwjgl-vulkan-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-xxhash/3.1.2/lwjgl-xxhash-3.1.2.jar:/home/kmhasan/.m2/repository/org/lwjgl/lwjgl-yoga/3.1.2/lwjgl-yoga-3.1.2.ja
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/home/kmhasan/.sdkman/candidates/java/current
+PATH=/home/kmhasan/.sdkman/candidates/java/current/bin:/home/kmhasan/bin:/home/kmhasan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+USERNAME=kmhasan
+LD_LIBRARY_PATH=/home/kmhasan/.sdkman/candidates/java/current/jre/lib/amd64:/home/kmhasan/.sdkman/candidates/java/current/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa35780], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa35780], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8a0910], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8a0910], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8a0910], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8a0910], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8a1ff0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8a36e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: [libjvm.so+0x8a36e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8a36e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.2 LTS"
+
+uname:Linux 4.10.0-32-generic #36~16.04.1-Ubuntu SMP Wed Aug 9 09:19:02 UTC 2017 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 63524, NOFILE 65536, AS infinity
+load average:1.23 0.99 0.94
+
+/proc/meminfo:
+MemTotal:       16379348 kB
+MemFree:         5982596 kB
+MemAvailable:   11830960 kB
+Buffers:          625572 kB
+Cached:          5206800 kB
+SwapCached:            0 kB
+Active:          5450880 kB
+Inactive:        4034904 kB
+Active(anon):    3664968 kB
+Inactive(anon):    58672 kB
+Active(file):    1785912 kB
+Inactive(file):  3976232 kB
+Unevictable:         660 kB
+Mlocked:             660 kB
+SwapTotal:      31250428 kB
+SwapFree:       31250428 kB
+Dirty:               272 kB
+Writeback:             0 kB
+AnonPages:       3493756 kB
+Mapped:          2258948 kB
+Shmem:             70240 kB
+Slab:             497332 kB
+SReclaimable:     426448 kB
+SUnreclaim:        70884 kB
+KernelStack:       14648 kB
+PageTables:        67624 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    39440100 kB
+Committed_AS:   11206792 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1761280 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      526216 kB
+DirectMap2M:    12005376 kB
+DirectMap1G:     5242880 kB
+
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 21 model 2 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 2800.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 16
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 1400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 17
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 4000.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 18
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 4000.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 19
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 4
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 2800.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 4
+cpu cores	: 4
+apicid		: 20
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 5
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 2100.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 5
+cpu cores	: 4
+apicid		: 21
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 6
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 2800.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 6
+cpu cores	: 4
+apicid		: 22
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 7
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x600084f
+cpu MHz		: 1400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 7
+cpu cores	: 4
+apicid		: 23
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+bugs		: fxsave_leak sysret_ss_attrs null_seg
+bogomips	: 8000.54
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+
+
+Memory: 4k page, physical 16379348k(5982596k free), swap 31250428k(31250428k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.131-b11) for linux-amd64 JRE (1.8.0_131-b11), built on Apr 12 2017 06:33:39 by "zulu_re" with gcc 4.4.7 20120313 (Red Hat 4.4.7-3)
+
+time: Sun Aug 13 09:29:20 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
